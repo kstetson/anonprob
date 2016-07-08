@@ -24,6 +24,7 @@ $(document).on("click", "#submit-problem", function(e) {
 $(document).on("click", "#submit-again", function(e) {
   e.preventDefault();
   $("#display-problem-wrapper").fadeOut(function() {
+    $("#problem_body, #problem_email").val("");
     $("#problem-form-wrapper").fadeIn();
   });
 });
