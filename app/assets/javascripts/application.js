@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.modal.min
 //= require_tree .
 
 $(document).on("click", "#submit-problem", function(e) {
@@ -91,3 +92,20 @@ function updatePointer() {
     wrapper.css('top', (target.y) * scale + yOffset);
     wrapper.css('left', (target.x) * scale + xOffset);
 }
+
+// modals
+$('a[href="#privacy"]').click(function(event) {
+  event.preventDefault();
+  $(this).modal({
+    fadeDuration: 1000,
+    fadeDelay: 0.50
+  });
+});
+
+$('a[href="#about"]').click(function(event) {
+  event.preventDefault();
+  $(this).modal({
+    fadeDuration: 1000,
+    fadeDelay: 0.50
+  });
+});

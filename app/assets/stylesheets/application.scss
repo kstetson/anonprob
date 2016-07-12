@@ -17,19 +17,22 @@
 @import "normalize-rails";
 @import "bourbon";
 @import "base/base";
+@import "jquery.modal.min";
 
 html {
   background: url("/tree.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
+textarea, input[type='email'] { background-color: lighten($light-gray, 10); }
+
 h1 {
   font-size: modular-scale(3);
   text-align: center;
   color: white;
   text-align: right;
-  padding: $small-spacing;
-
+  padding: $small-spacing $small-spacing 0 $small-spacing;
+  margin-bottom: 0.5em;
 }
 
 .content-wrapper {
@@ -38,17 +41,35 @@ h1 {
     width:400px;
     height:400px;
     position:fixed;
-
-    a { text-decoration: underline; }
 }
 
 #display-problem-wrapper {
-  padding: $base-spacing;
-  border: 1px solid $light-gray;
-  border-radius: 3px;
-  display: block;
-  background: white;
-  min-height: 8em;
+  .inner {
+    padding: $base-spacing;
+    border: 1px solid $light-gray;
+    border-radius: 3px;
+    display: block;
+    background: lighten($light-gray, 10);
+    min-height: 8em;
+    margin-bottom: $small-spacing
+  }
 }
 
+.info-links {
+  color: white;
+  text-align: right;
+  padding: 0 1.5em;
 
+  a { color: white; }
+}
+
+#about { 
+  &.modal { 
+    width: auto;
+    max-width: 600px; 
+  }
+}
+
+#problem_body {
+  height: 180px;
+}

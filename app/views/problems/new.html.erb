@@ -1,5 +1,7 @@
 <h1>The<br/>Anonymous<br/>Problem<br/>Project</h1>
-
+<div class="info-links">
+  <a href="#privacy">Privacy</a> | <a href="#about">About</a>
+</div>
 <div class="content-wrapper">
   <div id="problem-form-wrapper">
     <%= simple_form_for @problem, html: {data: {remote: true}} do |f| %>
@@ -12,12 +14,34 @@
   </div>
 
   <div id="display-problem-wrapper", style="display: none">
-    <div style="margin-bottom: 0.75em;">
-      <%= link_to "submit another problem", "javascript:void(0);", id: "submit-again" %>
-      <span>&nbsp;|&nbsp;</span>
-      <%= link_to "see another problem", "javascript:void(0);", id: "another-problem" %>
+    <div class="inner">
+      <div style="margin-bottom: 0.75em; padding-bottom: 0.75em; border-bottom: 1px solid #ccc; line-height: 1.8em;">Thank you!<br/>In return, a problem from the tree just for you:</div>
+      <div id="display-problem"></div>
     </div>
-    <div style="margin-bottom: 0.75em; padding-bottom: 0.75em; border-bottom: 1px solid #ccc;">Thank you!<br/>In return, a problem from the tree just for you</div>
-    <div id="display-problem"></div>
+    <%= link_to "Read another problem", "javascript:void(0);", id: "another-problem", class: "button" %>&nbsp;&nbsp;or <%= link_to "submit again", "javascript:void(0);", id: "submit-again" %>
   </div>
+</div>
+
+<div id="privacy", style="display: none">
+  <p>By submitting your problem, you are promising that it is true and giving us permission to include your anonymous problem in a potential book and/or elsewhere online. We may edit for length or clarity. You are encouraged to include an email address so that we can follow up with you if we have any clarification questions, but you are not required to do so.</p>
+  <p>You can also submit directly by email at <%= mail_to "anonymousproblemproject@gmail.com", "anonymousproblemproject@gmail.com", target: "blank" %>.</p>
+</div>
+
+<div id="about", style="display: none">
+  <h2>The Anonymous Problem Project</h2>
+  <p>One night when I was a kid and couldn’t sleep because of some very real-feeling problem on my mind, my father told me a story.</p>
+  ​
+  <p>The story was about a village with a “Problem Tree.” People would write down their problems, fold them up, and leave them in the branches of the Problem Tree. After they had done that, the rule was that they could look at all the other problems in the tree, choose one, and leave with any other problem in place of their own. But after looking at all the problems in the tree, everyone, in the end, chose to leave carrying the same problem they came with. Everyone walked away with the same reaction: “At least I don’t have those problems.”</p>
+  ​
+  <p>I’ve thought of this story many times since since then. I don’t know exactly why I like it so much. Maybe it’s calming to know that we aren’t alone in having problems. That we aren’t alone in facing challenges we wouldn’t yet have the slightest idea how to handle. Or perhaps we have some special connection to our own problems – some invisible ability to handle them embedded within us – that this perspective helps us realize.</p>
+   
+  <p>This project is inspired by the story of the Problem Tree. To participate, submit a problem that’s on your mind. Don’t worry about whether you think it will seem big or small to someone else: just be honest about whatever truly feels like the biggest problem in your life right now.</p>
+   
+  <p class="blockquote">I can’t sleep. I walk through every single day tired, and for years no doctor or medicine has been able to help. I can’t hold any normal job because I can’t keep any normal hours.</p>
+   
+  <p class="blockquote">I got a DUI and now I’m going to jail.</p>
+   
+  <p class="blockquote">I’m in love with someone who is married to someone else.</p>
+  ​
+  <p>If this project gets enough participation, these problems will be published together in a book. No names, no identities, no commentary. Just real problems that people can look through any time they want some perspective about where our problems fit among all the challenges we are all facing every day.</p>
 </div>
