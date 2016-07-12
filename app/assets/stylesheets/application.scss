@@ -17,3 +17,38 @@
 @import "normalize-rails";
 @import "bourbon";
 @import "base/base";
+
+html {
+  background: url("/tree.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+h1 {
+  font-size: modular-scale(3);
+  text-align: center;
+  color: white;
+  text-align: right;
+  padding: $small-spacing;
+
+}
+
+.content-wrapper {
+    margin-left:-200px;
+    margin-top:-200px;
+    width:400px;
+    height:400px;
+    position:fixed;
+
+    a { text-decoration: underline; }
+}
+
+#display-problem-wrapper {
+  padding: $base-spacing;
+  border: 1px solid $light-gray;
+  border-radius: 3px;
+  display: block;
+  background: white;
+  min-height: 8em;
+}
+
+

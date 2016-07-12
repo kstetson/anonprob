@@ -1,20 +1,23 @@
-<h1>The Anonymous Problem Project</h1>
+<h1>The<br/>Anonymous<br/>Problem<br/>Project</h1>
 
-<div id="problem-form-wrapper">
-  <%= simple_form_for @problem, html: {data: {remote: true}} do |f| %>
-    <%= f.input :body, label: "Submit a problem", required: false %>
-    <%= f.input :email, label: "Your email (optional)" %>
-    <%= f.hidden_field :latitude %>
-    <%= f.hidden_field :longitude %>
-    <%= f.submit "Submit", id: "submit-problem" %>
-  <% end %>
-</div>
-
-<div id="display-problem-wrapper", style="display: none">
-  <div>
-    <%= link_to "submit another problem", "javascript:void(0);", id: "submit-again" %>
-    <span>&nbsp;|&nbsp;</span>
-    <%= link_to "see another problem", "javascript:void(0);", id: "another-problem" %>
+<div class="content-wrapper">
+  <div id="problem-form-wrapper">
+    <%= simple_form_for @problem, html: {data: {remote: true}} do |f| %>
+      <%= f.input :body, label: false, placeholder: "Submit a problem", required: false %>
+      <%= f.input :email, label: false, placeholder: "Your email (optional)" %>
+      <%= f.hidden_field :latitude %>
+      <%= f.hidden_field :longitude %>
+      <%= f.submit "Submit", id: "submit-problem" %>
+    <% end %>
   </div>
-  <div id="display-problem"></div>
+
+  <div id="display-problem-wrapper", style="display: none">
+    <div style="margin-bottom: 0.75em;">
+      <%= link_to "submit another problem", "javascript:void(0);", id: "submit-again" %>
+      <span>&nbsp;|&nbsp;</span>
+      <%= link_to "see another problem", "javascript:void(0);", id: "another-problem" %>
+    </div>
+    <div style="margin-bottom: 0.75em; padding-bottom: 0.75em; border-bottom: 1px solid #ccc;">Thank you!<br/>In return, a problem from the tree just for you</div>
+    <div id="display-problem"></div>
+  </div>
 </div>
