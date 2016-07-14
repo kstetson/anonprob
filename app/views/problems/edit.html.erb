@@ -1,0 +1,51 @@
+<div class="admin-wrapper">
+  <div class="admin-content">
+    <%= link_to problems_path do %>
+      <h1>Anonymous Problem Project Admin</h1>
+    <% end %>
+  
+    <%= simple_form_for @problem do |f| %>
+      <%= f.input :body %>
+      <%= f.submit "Approve" %>
+      <%= f.submit "Reject" %>
+    <% end %>
+
+    <div class="problem-info">
+      <div class="field">
+        <div class="label">Status</div>
+        <div><%= @problem.status %></div>
+      </div>
+      
+      <div class="field">
+        <div class="label">Original body</div>
+        <div><%= @problem.original_body %></div>
+      </div>
+
+      <div class="field">
+        <div class="label">Location</div>
+        <div><%= @problem.address || "not given" %></div>
+      </div>
+
+      <div class="field">
+        <div class="label">Latitude</div>
+        <div><%= @problem.latitude || "not given" %></div>
+      </div>
+
+      <div class="field">
+        <div class="label">Longitude</div>
+        <div><%= @problem.longitude || "not given" %></div>
+      </div>
+
+      <div class="field">
+        <div class="label">Submitted at</div>
+        <div><%= @problem.created_at %></div>
+      </div>
+
+      <div class="field">
+        <div class="label">Last updated</div>
+        <div><%= @problem.updated_at %></div>
+      </div>
+    </div>
+
+  </div>
+</div>

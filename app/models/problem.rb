@@ -10,6 +10,13 @@ class Problem < ApplicationRecord
 
   validates :body, presence: true
 
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
+
+  def next
+    nextprob = Problem.submitted.order(:created_at).first
+  end
+
   private
     def set_submitted_status
       self.status = :submitted

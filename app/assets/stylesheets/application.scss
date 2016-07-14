@@ -78,3 +78,62 @@ h1 {
   color: $medium-gray;
   font-style: italic;
 }
+
+// admin
+
+.admin-wrapper {
+  width: 100%;
+
+  h1 { 
+    color: #000;
+    text-align: center;
+    border-bottom: 1px solid $medium-gray;
+    padding-bottom: $small-spacing;
+  }
+
+  form {
+    padding: $small-spacing;
+  }
+
+  .controls { 
+    padding: 0 $small-spacing;
+    a { text-decoration: underline; }
+  }
+}
+
+.admin-content {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $small-spacing 0;
+  background-color: rgba(255,255,255,0.9);
+  height: 100%;
+}
+
+.stats {
+  border-bottom: 1px solid $medium-gray;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.stat {
+  padding: $small-spacing;
+  text-align: right;
+  flex: 1 0 246px;
+
+  .value { 
+    font-size: modular-scale(2);
+    text-decoration: underline;
+  }
+}
+
+.problems-table-wrapper {
+  padding: 0 $small-spacing;
+  a { text-decoration: underline; }
+}
+
+.problem-info {
+  padding: $small-spacing;
+  .field { margin-bottom: $small-spacing }
+  .label { font-weight: bold }
+}

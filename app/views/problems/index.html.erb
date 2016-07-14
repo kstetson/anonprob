@@ -1,0 +1,51 @@
+<div class="admin-wrapper">
+  <div class="admin-content">
+    <div class="controls"><%= link_to "Go to public site".html_safe, new_problem_path %></div>
+    <h1>Anonymous Problem Project Admin</h1>
+    <div class="stats">
+      <%= link_to problems_path, class: "stat" do %>
+        <div>
+          <div class="value"><%= Problem.count %></div>
+          <div class="label">Total problems</div>
+        </div>
+      <% end %>
+      <%= link_to problems_path(status: "submitted"), class: "stat" do %>
+        <div>
+          <div class="value"><%= Problem.submitted.count %></div>
+          <div class="label">Submitted</div>
+        </div>
+      <% end %>
+      <%= link_to problems_path(status: "approved"), class: "stat" do %>
+        <div>
+          <div class="value"><%= Problem.approved.count %></div>
+          <div class="label">Approved</div>
+        </div>
+      <% end %>
+      <%= link_to problems_path(status: "rejected"), class: "stat" do %>
+        <div>
+          <div class="value"><%= Problem.rejected.count %></div>
+          <div class="label">Rejected</div>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="problems-table-wrapper">
+      <table>
+        <thead>
+          <th>Submitted at</th>
+          <th>Status</th>
+        </thead>
+        <tbody>
+          <% @problems.each do |p| %>
+            <tr>
+              <td><%= link_to p.created_at, edit_problem_path(p) %></td>
+              <td><%= p.status %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <%= paginate @problems %>
+    </div>
+
+  </div>
+</div>

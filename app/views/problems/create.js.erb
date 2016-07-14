@@ -1,3 +1,3 @@
-$("#display-problem").text("<%= @display_problem.body %>");
+$("#display-problem").html("<%= @display_problem.body if @display_problem.present? %>");
 $("#display-problem-wrapper").fadeIn();
 $("#display-problem").fadeIn();
