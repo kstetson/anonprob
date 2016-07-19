@@ -34,12 +34,16 @@
         <thead>
           <th>Submitted at</th>
           <th>Status</th>
+          <th>Severity</th>
+          <th>Tags</th>
         </thead>
         <tbody>
           <% @problems.each do |p| %>
             <tr>
               <td><%= link_to p.created_at, edit_problem_path(p) %></td>
               <td><%= p.status %></td>
+              <td><%= p.severity %></td>
+              <td><%= p.tags %></td>
             </tr>
           <% end %>
         </tbody>

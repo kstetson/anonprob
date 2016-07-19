@@ -5,6 +5,12 @@ class Problem < ApplicationRecord
     rejected: 2
   }
 
+  enum severity: {
+    low: 1,
+    medium: 2,
+    high: 3
+  }
+
   before_create :set_submitted_status
   before_create :copy_body_to_original_body
 

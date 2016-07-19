@@ -6,6 +6,8 @@
   
     <%= simple_form_for @problem do |f| %>
       <%= f.input :body %>
+      <%= f.input :severity, :as => :select, :collection => Problem.severities.keys.to_a %>
+      <%= f.input :tags %>
       <%= f.submit "Approve" %>
       <%= f.submit "Reject" %>
     <% end %>

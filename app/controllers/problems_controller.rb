@@ -42,6 +42,6 @@ class ProblemsController < ApplicationController
 
   private
     def problem_params
-      params.require(:problem).permit(:body, :email, :latitude, :longitude, :status)
+      params.require(:problem).permit(:body, :email, :latitude, :longitude, :status, :severity, :tags)
     end
 end
